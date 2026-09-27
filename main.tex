@@ -1,0 +1,71 @@
+% You can switch XeLaTeX/pdfLaTeX/LaTeX/LuaLaTeX in Settings
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{geometry} % 让一页显示的内容更多
+\geometry{left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
+\usepackage{amsmath, amsthm, amssymb} % 数学宏包
+\usepackage{graphicx} % 放图片的宏包
+% hyperref 要放在所有宏包的最后
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+
+% 导言区
+
+\title{我的第一个\LaTeX 文档}
+\author{Mo}
+\date{\today}
+
+% 正文区
+
+\begin{document}
+
+\maketitle % 放置标题
+
+\tableofcontents % 添加目录
+
+\newpage
+\section{一级标题}
+
+\subsection{二级标题}
+
+这里是正文. 如图~\ref{fig:kirigiri}所示 % ~是不可换行空格
+，也如表~\ref{tab:my-table}所示。
+
+\begin{figure}[htbp] % 自动选择最优位置
+    \centering % 居中
+    \includegraphics[width=0.3\textwidth]{图片.jpg}
+    \caption{雾切响子} % 标题
+    \label{fig:kirigiri} % 打标签，方便引用
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \caption{表格标题}
+    \begin{tabular}{ccc}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{tabular}
+    \label{tab:my-table}
+\end{table}
+
+\subsection{二级标题}
+
+这里也是正文. 
+
+%行内公式 inline
+若$a>0$, $b>0$, 则$a+b>0$.
+设$\lim_{n\to\infty}x_n=x$.
+
+%行间公式 display
+若$a>0$, $b>0$, 则
+\[ % 也可用$$
+a+b>0.
+\]
+设$\displaystyle\lim_{n\to\infty}x_n=x$.
+
+\begin{enumerate}
+    \item[(1)] 这是第一点; 
+    \item[(2)] 这是第二点;
+    \item 这是第三点. 
+\end{enumerate}
+
+\end{document}
